@@ -30,6 +30,7 @@ or [directly copy the manifest link for the latest release](https://github.com/s
 - Alien RPG (alienrpg)
 - Cyberpunk RED (cyberpunk-red-core)
 - Daggerheart (daggerheart)
+- DC20 (dc20rpg)
 - Delta Green (deltagreen)
 - Dungeon World (dungeonworld)
 - Dragonbane / Drakar och Demoner (dragonbane)

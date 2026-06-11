@@ -23,6 +23,12 @@ const systemBasedHpKeys = (actor) => {
       hpMax: 'system.attributes.hp.max',
       zeroIsBad: true,
     }
+  } else if (game.system.id === 'dc20rpg') {
+    return {
+      hpValue: 'system.resources.health.current',
+      hpMax: 'system.resources.health.max',
+      zeroIsBad: true,
+    }
   } else if (game.system.id === 'dnd4e') {
     return {
       hpValue: 'system.attributes.hp.value',
