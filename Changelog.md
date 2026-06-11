@@ -1,3 +1,6 @@
+##  1.1.24 - 2026-01-23
+- Added support for DC20 (#39)
+
 ##  1.1.20 - 2026-01-23
 - Added support for Daggerheart (#38)
 
