@@ -54,6 +54,7 @@ or [directly copy the manifest link for the latest release](https://github.com/s
 - Tormenta20 (tormenta20)
 - Warhammer Fantasy Roleplay 4e (wfrp4e)
 - Warhammer 40,000: Imperium Maledictum (impmal)
+- Zweihänder Grim & Perilous RPG (zweihander)
 
 More can be added easily by request / PR!
 

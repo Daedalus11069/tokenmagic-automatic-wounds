@@ -1,3 +1,6 @@
+##  1.1.25 - 2026-08-01
+- Added support for Zweihänder (#40)
+
 ##  1.1.24 - 2026-01-23
 - Added support for DC20 (#39)
 
