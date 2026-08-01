@@ -81,6 +81,14 @@ const systemBasedHpKeys = (actor) => {
         zeroIsBad: true,
       }
     else return undefined
+  } else if (game.system.id === 'zweihander') {
+    if (['creature', 'npc', 'character', 'vehicle'].includes(actor.type))
+      return {
+        hpValue: 'stats.secondaryAttributes.damageCurrent',
+        hpMax: 5, // hp maximum is always 5 in Zweihander
+        zeroIsBad: true,
+      }
+    else return undefined
   } else if (game.system.id === 'mosh') {
     if (actor.type !== 'ship') {
       return {
@@ -205,7 +213,9 @@ export const systemBasedHpFromActor = (actor) => {
     }
 
   const currentHpInSystem = foundry.utils.getProperty(actor, dataKeys.hpValue)
-  const maxHpInSystem = foundry.utils.getProperty(actor, dataKeys.hpMax)
+  const maxHpInSystem = typeof dataKeys.hpMax === "number"
+    ? dataKeys.hpMax
+    : foundry.utils.getProperty(actor, dataKeys.hpMax)
 
   // normalize to the "zero is bad" standard, i.e. taking damage decreases the value, down from max to 0, not up
   return {
@@ -219,7 +229,9 @@ export const systemBasedHpFromUpdate = (actor, data) => {
     return undefined
 
   const currentHpInSystem = foundry.utils.getProperty(data, dataKeys.hpValue)
-  const maxHpInSystem = foundry.utils.getProperty(actor, dataKeys.hpMax)
+  const maxHpInSystem = typeof dataKeys.hpMax === "number"
+    ? dataKeys.hpMax
+    : foundry.utils.getProperty(actor, dataKeys.hpMax)
 
   // normalize to the "zero is bad" standard, i.e. taking damage decreases the value, down from max to 0, not up
   return dataKeys.zeroIsBad ? currentHpInSystem : (maxHpInSystem - currentHpInSystem)
