@@ -82,13 +82,11 @@ const systemBasedHpKeys = (actor) => {
       }
     else return undefined
   } else if (game.system.id === 'zweihander') {
-    if (['creature', 'npc', 'character', 'vehicle'].includes(actor.type))
-      return {
-        hpValue: 'stats.secondaryAttributes.damageCurrent',
-        hpMax: 5, // hp maximum is always 5 in Zweihander
-        zeroIsBad: true,
-      }
-    else return undefined
+    return {
+      hpValue: 'system.stats.secondaryAttributes.damageCurrent.value',
+      hpMax: 'system.stats.secondaryAttributes.damageCurrent.max', // although hp maximum is always 5 in Zweihander
+      zeroIsBad: true,
+    }
   } else if (game.system.id === 'mosh') {
     if (actor.type !== 'ship') {
       return {
