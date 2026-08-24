@@ -1,4 +1,19 @@
+const MODULE_ID = 'tokenmagic-automatic-wounds'
+
+const customHpKeys = () => {
+  const hpValue = game.settings.get(MODULE_ID, 'custom-hp-value-path')
+  const hpMax = game.settings.get(MODULE_ID, 'custom-hp-max-path')
+  if (!hpValue || !hpMax) return undefined
+  return {
+    hpValue,
+    hpMax,
+    zeroIsBad: game.settings.get(MODULE_ID, 'custom-hp-zero-is-bad'),
+  }
+}
+
 const systemBasedHpKeys = (actor) => {
+  const customKeys = customHpKeys()
+  if (customKeys !== undefined) return customKeys
   if (game.system.id === 'pf2e') {
     return {
       hpValue: 'system.attributes.hp.value',

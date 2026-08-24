@@ -8,6 +8,18 @@
       "token-images-are-circular": {
         "name": "Token images are circular",
         "hint": "Should the code spread wounds in a circle pattern? If you have square token images, toggle this off, so that wounds can appear everywhere on the token (in a square pattern) without always leaving empty corners. If you use top-down tokens you probably still want to keep this setting on."
+      },
+      "custom-hp-value-path": {
+        "name": "Custom HP value path",
+        "hint": "Advanced/unsupported systems only. If set, overrides automatic system detection: the data path (e.g. system.attributes.hp.value) to the actor's current HP. Must be used together with Custom HP max path."
+      },
+      "custom-hp-max-path": {
+        "name": "Custom HP max path",
+        "hint": "Advanced/unsupported systems only. If set, overrides automatic system detection: the data path (e.g. system.attributes.hp.max) to the actor's maximum HP. Must be used together with Custom HP value path."
+      },
+      "custom-hp-zero-is-bad": {
+        "name": "Custom HP: zero is bad",
+        "hint": "Only used when Custom HP value/max paths are set. Enable if a value of zero means the actor is in the worst condition (most systems). Disable if zero means the actor is undamaged/at full health (e.g. wound-based systems)."
       }
     },
     "dialog": {

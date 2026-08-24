@@ -33,6 +33,30 @@ export const registerAutomaticWoundEffectsSettings = () => {
     type: Boolean,
     default: true,
   })
+  game.settings.register(MODULE_ID, 'custom-hp-value-path', {
+    name: localize('setting.custom-hp-value-path.name'),
+    hint: localize('setting.custom-hp-value-path.hint'),
+    scope: 'world',
+    config: true,
+    type: String,
+    default: '',
+  })
+  game.settings.register(MODULE_ID, 'custom-hp-max-path', {
+    name: localize('setting.custom-hp-max-path.name'),
+    hint: localize('setting.custom-hp-max-path.hint'),
+    scope: 'world',
+    config: true,
+    type: String,
+    default: '',
+  })
+  game.settings.register(MODULE_ID, 'custom-hp-zero-is-bad', {
+    name: localize('setting.custom-hp-zero-is-bad.name'),
+    hint: localize('setting.custom-hp-zero-is-bad.hint'),
+    scope: 'world',
+    config: true,
+    type: Boolean,
+    default: true,
+  })
 }
 
 export const hookAutomaticWoundEffects = () => {
