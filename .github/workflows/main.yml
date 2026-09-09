@@ -41,7 +41,7 @@ jobs:
         env:
           version: ${{ steps.get-version.outputs.version-without-v }}
           manifest: https://github.com/${{ github.repository }}/releases/latest/download/module.json
-          download: https://github.com/${{ github.repository }}/releases/download/${{ steps.get-version.outputs.version-without-v }}/module.zip
+          download: https://github.com/${{ github.repository }}/releases/download/${{github.event.release.tag_name}}/module.zip
 
       - name: Create zip with all important module stuff (skipping unwanted files/folders, warning about missing ones)
         run: zip -r9 ./module.zip assets/ packs/ lang/ scripts/ styles/ templates/ Readme.md License.txt Changelog.md module.json
